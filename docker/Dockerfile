@@ -21,6 +21,6 @@ COPY src src
 RUN mvn package -Dmaven.test.skip=true
 
 FROM openjdk:11-jdk
-COPY --from=0 /build/target/sampleService2.jar /app/target/sampleService2.jar
+COPY --from=0 /build/target/keyvaultDemoMs.jar /app/target/keyvaultDemoMs.jar
 EXPOSE 8080
-ENTRYPOINT [ "java", "-jar", "/app/target/sampleService2.jar"]
+ENTRYPOINT [ "java", "-jar", "/app/target/keyvaultDemoMs.jar"]
